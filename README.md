@@ -1,3 +1,3 @@
 # Innovation Knowledge Graph
 
-This repo contains data models towards building an Innovation Knowledge
+This repo contains data models towards building an Innovation Knowledge Graph.

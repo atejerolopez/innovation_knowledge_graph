@@ -1,67 +1,156 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="https://raw.githubusercontent.com/atejerolopez/innovation_knowledge_graph/master/inneo.owl#"
-     xml:base="https://raw.githubusercontent.com/atejerolopez/innovation_knowledge_graph/master/inneo.owl"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://raw.githubusercontent.com/atejerolopez/innovation_knowledge_graph/master/inneo.owl">
-        <rdfs:label xml:lang="en">Innovation Ecosystems Ontology</rdfs:label>
-    </owl:Ontology>
-    
+@prefix : <http://inneo.linkeddata.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://inneo.linkeddata.es> .
+
+<http://inneo.linkeddata.es> rdf:type owl:Ontology ;
+                              <http://purl.org/dc/terms/date> "2018-07-23" ;
+                              <http://purl.org/dc/terms/contributor> "Víctor Rodríguez-Doncel" ;
+                              <http://purl.org/dc/terms/title> "Innovation Ecosystems Ontology" ;
+                              <http://purl.org/dc/terms/creator> "Alberto Tejero" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+<http://www.w3.org/2004/02/skos/core#exactMatch> rdf:type owl:AnnotationProperty .
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+#################################################################
+#    Object Properties
+#################################################################
 
-    
-
-
-    <!-- http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#HigherorSecondaryEducationEstablishment -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#HigherorSecondaryEducationEstablishment">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#Organization"/>
-    </owl:Class>
-    
+###  http://inneo.linkeddata.es#grantsPatent
+:grantsPatent rdf:type owl:ObjectProperty ;
+              rdfs:domain :Organization ;
+              rdfs:range :Patent ;
+              rdfs:comment "NO HE ENTENDIDO LA NECESIDAD DE ESTO...Es para incluir la relación de una Oficina de Patentes y marcas con una patente concreta"@en ;
+              rdfs:label "grants patent"@en .
 
 
-    <!-- http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#Organization -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#Organization"/>
-    
-
-
-    <!-- http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#Privatefor-ProfitEntity -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#Privatefor-ProfitEntity">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#Organization"/>
-        <rdfs:comment xml:lang="en">Definition</rdfs:comment>
-        <rdfs:label xml:lang="en">Private for-profit entity</rdfs:label>
-    </owl:Class>
-    
+###  http://inneo.linkeddata.es#hasOrganization
+:hasOrganization rdf:type owl:ObjectProperty ;
+                 rdfs:domain :InnovationEcosystem ;
+                 rdfs:range :Organization ;
+                 rdfs:label "has organization"@en .
 
 
-    <!-- http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#PublicBody -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#PublicBody">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#Organization"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#ResearchOrganization -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#ResearchOrganization">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/albertotejero/ontologies/2018/5/untitled-ontology-3#Organization"/>
-    </owl:Class>
-</rdf:RDF>
+###  http://inneo.linkeddata.es#hasPatent
+:hasPatent rdf:type owl:ObjectProperty ;
+           rdfs:domain :Organization ;
+           rdfs:range :Patent ;
+           rdfs:label "has patent"@en .
 
 
+###  http://inneo.linkeddata.es#hasRelation
+:hasRelation rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Organization ;
+             rdfs:range :Organization ;
+             rdfs:comment "Def. Organization participating in a relation"@en ;
+             rdfs:label "has relation"@en .
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://inneo.linkeddata.es#dynamism
+:dynamism rdf:type owl:DatatypeProperty ;
+          rdfs:domain :InnovationEcosystem ;
+          rdfs:range xsd:float ;
+          rdfs:comment "Dynamism is defined as the capacity of movement of knowledge through actors and their relationships within the innovation ecosystem"@en ;
+          rdfs:label "dynamism"@en .
+
+
+###  http://inneo.linkeddata.es#innovationEcosystemType
+:innovationEcosystemType rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :InnovationEcosystem ;
+                         rdfs:comment "Innovation ecosystems are dynamic systems made up by actors and connected by knowledge flows based on the relationships of these actors"@en ;
+                         rdfs:label "innovation ecosystem type"@en .
+
+
+###  http://inneo.linkeddata.es#origin
+:origin rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://inneo.linkeddata.es#efficiency
+:efficiency rdf:type owl:DatatypeProperty ;
+             rdfs:domain :InnovationEcosystem ;
+             rdfs:range xsd:float ;
+             rdfs:comment "Efficiency is defined as the capacity to transform knowdlegde in useful resources for the ecosystem and its context "@en ;
+             rdfs:label "efficiency"@en .
+
+
+###  http://inneo.linkeddata.es#relevance
+:relevance rdf:type owl:DatatypeProperty ;
+           rdfs:domain :InnovationEcosystem ;
+           rdfs:range xsd:float ;
+           rdfs:comment "It represents how relevant an innovation ecosystem is for economic growth of its context"@en ;
+           rdfs:label "relevance"@en .
+
+
+###  http://inneo.linkeddata.es#scope
+:scope rdf:type owl:DatatypeProperty ;
+       rdfs:domain :InnovationEcosystem ;
+       rdfs:comment "Gives a description about the belonging of an innovation ecosystem, for example an entity as the Universidad Politécnica de Madrid, or even a region as Madrid"@en ;
+       rdfs:label "scope"@en .
+
+
+###  http://inneo.linkeddata.es#sector
+:sector rdf:type owl:DatatypeProperty .
+
+
+###  http://inneo.linkeddata.es#typeOfInnovationApplication
+:typeOfInnovationApplication rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :Organization .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://inneo.linkeddata.es#Acquisition
+:Acquisition rdf:type owl:Class ;
+             rdfs:subClassOf :InnovationRelation .
+
+
+###  http://inneo.linkeddata.es#InnovationEcosystem
+:InnovationEcosystem rdf:type owl:Class ;
+                     rdfs:comment "Innovation ecosystems are dynamic systems made up by actors and connected by knowledge flows based on the relationships of these actors"@en ;
+                     rdfs:label "Innovation Ecosystem"@en .
+
+
+###  http://inneo.linkeddata.es#InnovationRelation
+:InnovationRelation rdf:type owl:Class ;
+                    rdfs:comment "Innovation Relation"@en .
+
+
+###  http://inneo.linkeddata.es#Investment
+:Investment rdf:type owl:Class ;
+            rdfs:subClassOf :InnovationRelation .
+
+
+###  http://inneo.linkeddata.es#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:comment "Organization represents a collection of people organized together into a community or other social, commercial or political structure, who share common goals"@en ;
+              rdfs:label "Organization"@en ;
+              <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.w3.org/ns/org#Organization> .
+
+
+###  http://inneo.linkeddata.es#Patent
+:Patent rdf:type owl:Class ;
+        rdfs:comment "def"@en ;
+        rdfs:label "Patent"@en .
+
+
+###  http://inneo.linkeddata.es#PatentLicense
+:PatentLicense rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
