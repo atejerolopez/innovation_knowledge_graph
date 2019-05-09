@@ -27,6 +27,39 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://inneo.linkeddata.es#attractsOrganization
+:attractsOrganization rdf:type owl:ObjectProperty .
+
+
+###  http://inneo.linkeddata.es#belongsToInnovationEcosystem
+:belongsToInnovationEcosystem rdf:type owl:ObjectProperty .
+
+
+###  http://inneo.linkeddata.es#consumesKnowledge
+:consumesKnowledge rdf:type owl:ObjectProperty .
+
+
+###  http://inneo.linkeddata.es#contractsTalent
+:contractsTalent rdf:type owl:ObjectProperty .
+
+
+###  http://inneo.linkeddata.es#createsConnector
+:createsConnector rdf:type owl:ObjectProperty .
+
+
+###  http://inneo.linkeddata.es#createsEvent
+:createsEvent rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://inneo.linkeddata.es#createsKnowledge
+:createsKnowledge rdf:type owl:ObjectProperty .
+
+
+###  http://inneo.linkeddata.es#exploitsPatent
+:exploitsPatent rdf:type owl:ObjectProperty .
+
+
 ###  http://inneo.linkeddata.es#grantsPatent
 :grantsPatent rdf:type owl:ObjectProperty ;
               rdfs:domain :Organization ;
@@ -57,6 +90,31 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
              rdfs:range :Organization ;
              rdfs:comment "Def. Organization participating in a relation"@en ;
              rdfs:label "has relation"@en .
+
+
+###  http://inneo.linkeddata.es#isExplicitKnowledge
+:isExplicitKnowledge rdf:type owl:ObjectProperty .
+
+
+###  http://inneo.linkeddata.es#isTacitKnowledge
+:isTacitKnowledge rdf:type owl:ObjectProperty .
+
+
+###  http://inneo.linkeddata.es#participatesInArticle
+:participatesInArticle rdf:type owl:ObjectProperty .
+
+
+###  http://inneo.linkeddata.es#participatesInProject
+:participatesInProject rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://inneo.linkeddata.es#supportsConnector
+:supportsConnector rdf:type owl:ObjectProperty .
+
+
+###  http://inneo.linkeddata.es#transfersKnowledge
+:transfersKnowledge rdf:type owl:ObjectProperty .
 
 
 #################################################################
