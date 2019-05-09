@@ -1,23 +1,26 @@
 @prefix : <http://inneo.linkeddata.es#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @base <http://inneo.linkeddata.es> .
 
 <http://inneo.linkeddata.es> rdf:type owl:Ontology ;
-                              <http://purl.org/dc/terms/date> "2018-07-23" ;
-                              <http://purl.org/dc/terms/contributor> "Víctor Rodríguez-Doncel" ;
-                              <http://purl.org/dc/terms/title> "Innovation Ecosystems Ontology" ;
-                              <http://purl.org/dc/terms/creator> "Alberto Tejero" .
+                              dct:contributor "Víctor Rodríguez-Doncel" ;
+                              dct:title "Innovation Ecosystems Ontology" ;
+                              dct:date "2019-05-13" ;
+                              dct:creator "Alberto Tejero" .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
 ###  http://www.w3.org/2004/02/skos/core#exactMatch
-<http://www.w3.org/2004/02/skos/core#exactMatch> rdf:type owl:AnnotationProperty .
+skos:exactMatch rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -36,6 +39,7 @@
 :hasOrganization rdf:type owl:ObjectProperty ;
                  rdfs:domain :InnovationEcosystem ;
                  rdfs:range :Organization ;
+                 rdfs:comment "Innovation ecosystems are dynamic systems made up by organizations and connected by knowledge flows based on the relationships of these organizations" ;
                  rdfs:label "has organization"@en .
 
 
@@ -67,6 +71,14 @@
           rdfs:label "dynamism"@en .
 
 
+###  http://inneo.linkeddata.es#efficiency
+:efficiency rdf:type owl:DatatypeProperty ;
+            rdfs:domain :InnovationEcosystem ;
+            rdfs:range xsd:float ;
+            rdfs:comment "Efficiency is defined as the capacity to transform knowdlegde in useful resources for the ecosystem and its context "@en ;
+            rdfs:label "efficiency"@en .
+
+
 ###  http://inneo.linkeddata.es#innovationEcosystemType
 :innovationEcosystemType rdf:type owl:DatatypeProperty ;
                          rdfs:domain :InnovationEcosystem ;
@@ -77,14 +89,6 @@
 ###  http://inneo.linkeddata.es#origin
 :origin rdf:type owl:DatatypeProperty ;
         rdfs:subPropertyOf owl:topDataProperty .
-
-
-###  http://inneo.linkeddata.es#efficiency
-:efficiency rdf:type owl:DatatypeProperty ;
-             rdfs:domain :InnovationEcosystem ;
-             rdfs:range xsd:float ;
-             rdfs:comment "Efficiency is defined as the capacity to transform knowdlegde in useful resources for the ecosystem and its context "@en ;
-             rdfs:label "efficiency"@en .
 
 
 ###  http://inneo.linkeddata.es#relevance
@@ -115,42 +119,72 @@
 #    Classes
 #################################################################
 
-###  http://inneo.linkeddata.es#Acquisition
-:Acquisition rdf:type owl:Class ;
-             rdfs:subClassOf :InnovationRelation .
+###  http://inneo.linkeddata.es#Article
+:Article rdf:type owl:Class ;
+         rdfs:comment "An article is a written work published in a print or electronic medium, for the purpose of propagating news, research results, academic analysis, or debate"@en .
+
+
+###  http://inneo.linkeddata.es#Connector
+:Connector rdf:type owl:Class ;
+           rdfs:comment "Connectors are timeless elements, used by the organizations of the ecosystem in a recurrent way to interrelate them in a voluntary basis, without being forced to do so."@en .
+
+
+###  http://inneo.linkeddata.es#Event
+:Event rdf:type owl:Class ;
+       rdfs:comment "Events are elements associated to specific moments in time, which provoke the interaction of organizations of the ecosystem around a specific connector or set of connectors."@en .
+
+
+###  http://inneo.linkeddata.es#ExplicitKnowledge
+:ExplicitKnowledge rdf:type owl:Class ;
+                   rdfs:subClassOf :Knowledge ;
+                   rdfs:comment "Explicit knowledge refers to that type of knowledge that has been or can be articulated, codified and stored in some kind of medium. (such as defined Nonaka and Takeuchi, 1995)"@en ;
+                   rdfs:label "Explicit Knowledge"@en .
+
+
+###  http://inneo.linkeddata.es#Funding
+:Funding rdf:type owl:Class ;
+         rdfs:comment "Funding is the act of providing financial resources, usually in the form of money, or other values such as effort or time, to finance a need, program, and project, usually by an organization or company (definition by Wikipedia)"@en .
 
 
 ###  http://inneo.linkeddata.es#InnovationEcosystem
 :InnovationEcosystem rdf:type owl:Class ;
-                     rdfs:comment "Innovation ecosystems are dynamic systems made up by actors and connected by knowledge flows based on the relationships of these actors"@en ;
+                     rdfs:comment "A dynamic system made up by actors and connected by knowledge flows based on the relationships of these actors"@en ;
                      rdfs:label "Innovation Ecosystem"@en .
 
 
-###  http://inneo.linkeddata.es#InnovationRelation
-:InnovationRelation rdf:type owl:Class ;
-                    rdfs:comment "Innovation Relation"@en .
-
-
-###  http://inneo.linkeddata.es#Investment
-:Investment rdf:type owl:Class ;
-            rdfs:subClassOf :InnovationRelation .
+###  http://inneo.linkeddata.es#Knowledge
+:Knowledge rdf:type owl:Class ;
+           rdfs:comment "In the context of innovation, knowledge is the \"element\" created, transferred and consumed by the organizations of the innovation ecosystem."@en .
 
 
 ###  http://inneo.linkeddata.es#Organization
 :Organization rdf:type owl:Class ;
               rdfs:comment "Organization represents a collection of people organized together into a community or other social, commercial or political structure, who share common goals"@en ;
               rdfs:label "Organization"@en ;
-              <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.w3.org/ns/org#Organization> .
+              skos:exactMatch org:Organization .
 
 
 ###  http://inneo.linkeddata.es#Patent
 :Patent rdf:type owl:Class ;
-        rdfs:comment "def"@en ;
+        rdfs:comment "A patent is a form of intellectual property. A patent gives its owner (organization or person) the right to exclude others from making, using, selling, and importing an invention for a limited period of time, usually twenty years. (such as defined as Wikipedia)"@en ;
         rdfs:label "Patent"@en .
 
 
-###  http://inneo.linkeddata.es#PatentLicense
-:PatentLicense rdf:type owl:Class .
+###  http://inneo.linkeddata.es#Project
+:Project rdf:type owl:Class ;
+         rdfs:comment "Contemporary business and science treat as a project any undertaking, conducted individually or collaboratively and possibly involving research or design, that is carefully planned to achieve a particular aim. (definition by Wikipedia)"@en .
+
+
+###  http://inneo.linkeddata.es#TacitKnowledge
+:TacitKnowledge rdf:type owl:Class ;
+                rdfs:subClassOf :Knowledge ;
+                rdfs:comment "Tacit knowledge is highly personal (held within the holder), subjective, difficult to formalize, articulate and communicate fully, experience based, contextualized, job specific, transferred through conversation or narrative, not captured by formal education or training and may even be subconscious but capable of becoming explicit knowledge. (such as defined by Nonaka and Takeuchi, 1995)"@en ;
+                rdfs:label "Tacit Knowledge"@en .
+
+
+###  http://inneo.linkeddata.es#Talent
+:Talent rdf:type owl:Class ;
+        rdfs:comment "A talent is a group of aptitudes useful for some activities, which is normally represented or accumulated in one or more persons."@en .
 
 
 ###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
