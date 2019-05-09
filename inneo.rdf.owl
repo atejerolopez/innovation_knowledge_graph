@@ -1,0 +1,373 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://inneo.linkeddata.es#"
+     xml:base="http://inneo.linkeddata.es"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:org="http://www.w3.org/ns/org#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://inneo.linkeddata.es">
+        <dct:contributor>Víctor Rodríguez-Doncel</dct:contributor>
+        <dct:title>Innovation Ecosystems Ontology</dct:title>
+        <dct:date>2019-05-13</dct:date>
+        <dct:creator>Alberto Tejero</dct:creator>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://inneo.linkeddata.es#attractsOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#attractsOrganization"/>
+    
+
+
+    <!-- http://inneo.linkeddata.es#belongsToInnovationEcosystem -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#belongsToInnovationEcosystem"/>
+    
+
+
+    <!-- http://inneo.linkeddata.es#consumesKnowledge -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#consumesKnowledge"/>
+    
+
+
+    <!-- http://inneo.linkeddata.es#contractsTalent -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#contractsTalent"/>
+    
+
+
+    <!-- http://inneo.linkeddata.es#createsConnector -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#createsConnector"/>
+    
+
+
+    <!-- http://inneo.linkeddata.es#createsEvent -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#createsEvent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://inneo.linkeddata.es#createsKnowledge -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#createsKnowledge"/>
+    
+
+
+    <!-- http://inneo.linkeddata.es#exploitsPatent -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#exploitsPatent"/>
+    
+
+
+    <!-- http://inneo.linkeddata.es#hasOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#hasOrganization">
+        <rdfs:domain rdf:resource="http://inneo.linkeddata.es#InnovationEcosystem"/>
+        <rdfs:range rdf:resource="http://inneo.linkeddata.es#Organization"/>
+        <rdfs:comment>Innovation ecosystems are dynamic systems made up by organizations and connected by knowledge flows based on the relationships of these organizations</rdfs:comment>
+        <rdfs:label xml:lang="en">has organization</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://inneo.linkeddata.es#hasPatent -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#hasPatent">
+        <rdfs:domain rdf:resource="http://inneo.linkeddata.es#Organization"/>
+        <rdfs:range rdf:resource="http://inneo.linkeddata.es#Patent"/>
+        <rdfs:label xml:lang="en">has patent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://inneo.linkeddata.es#hasRelation -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#hasRelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://inneo.linkeddata.es#Organization"/>
+        <rdfs:range rdf:resource="http://inneo.linkeddata.es#Organization"/>
+        <rdfs:comment xml:lang="en">Def. Organization participating in a relation</rdfs:comment>
+        <rdfs:label xml:lang="en">has relation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://inneo.linkeddata.es#isExplicitKnowledge -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#isExplicitKnowledge"/>
+    
+
+
+    <!-- http://inneo.linkeddata.es#isTacitKnowledge -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#isTacitKnowledge"/>
+    
+
+
+    <!-- http://inneo.linkeddata.es#participatesInArticle -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#participatesInArticle"/>
+    
+
+
+    <!-- http://inneo.linkeddata.es#participatesInProject -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#participatesInProject">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://inneo.linkeddata.es#supportsConnector -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#supportsConnector"/>
+    
+
+
+    <!-- http://inneo.linkeddata.es#transfersKnowledge -->
+
+    <owl:ObjectProperty rdf:about="http://inneo.linkeddata.es#transfersKnowledge"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://inneo.linkeddata.es#dynamism -->
+
+    <owl:DatatypeProperty rdf:about="http://inneo.linkeddata.es#dynamism">
+        <rdfs:domain rdf:resource="http://inneo.linkeddata.es#InnovationEcosystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Dynamism is defined as the capacity of movement of knowledge through actors and their relationships within the innovation ecosystem</rdfs:comment>
+        <rdfs:label xml:lang="en">dynamism</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inneo.linkeddata.es#efficiency -->
+
+    <owl:DatatypeProperty rdf:about="http://inneo.linkeddata.es#efficiency">
+        <rdfs:domain rdf:resource="http://inneo.linkeddata.es#InnovationEcosystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Efficiency is defined as the capacity to transform knowdlegde in useful resources for the ecosystem and its context </rdfs:comment>
+        <rdfs:label xml:lang="en">efficiency</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inneo.linkeddata.es#innovationEcosystemType -->
+
+    <owl:DatatypeProperty rdf:about="http://inneo.linkeddata.es#innovationEcosystemType">
+        <rdfs:domain rdf:resource="http://inneo.linkeddata.es#InnovationEcosystem"/>
+        <rdfs:comment xml:lang="en">Innovation ecosystems are dynamic systems made up by actors and connected by knowledge flows based on the relationships of these actors</rdfs:comment>
+        <rdfs:label xml:lang="en">innovation ecosystem type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inneo.linkeddata.es#origin -->
+
+    <owl:DatatypeProperty rdf:about="http://inneo.linkeddata.es#origin">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inneo.linkeddata.es#relevance -->
+
+    <owl:DatatypeProperty rdf:about="http://inneo.linkeddata.es#relevance">
+        <rdfs:domain rdf:resource="http://inneo.linkeddata.es#InnovationEcosystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">It represents how relevant an innovation ecosystem is for economic growth of its context</rdfs:comment>
+        <rdfs:label xml:lang="en">relevance</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inneo.linkeddata.es#scope -->
+
+    <owl:DatatypeProperty rdf:about="http://inneo.linkeddata.es#scope">
+        <rdfs:domain rdf:resource="http://inneo.linkeddata.es#InnovationEcosystem"/>
+        <rdfs:comment xml:lang="en">Gives a description about the belonging of an innovation ecosystem, for example an entity as the Universidad Politécnica de Madrid, or even a region as Madrid</rdfs:comment>
+        <rdfs:label xml:lang="en">scope</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inneo.linkeddata.es#sector -->
+
+    <owl:DatatypeProperty rdf:about="http://inneo.linkeddata.es#sector"/>
+    
+
+
+    <!-- http://inneo.linkeddata.es#typeOfInnovationApplication -->
+
+    <owl:DatatypeProperty rdf:about="http://inneo.linkeddata.es#typeOfInnovationApplication">
+        <rdfs:domain rdf:resource="http://inneo.linkeddata.es#Organization"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://inneo.linkeddata.es#Article -->
+
+    <owl:Class rdf:about="http://inneo.linkeddata.es#Article">
+        <rdfs:comment xml:lang="en">An article is a written work published in a print or electronic medium, for the purpose of propagating news, research results, academic analysis, or debate</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://inneo.linkeddata.es#Connector -->
+
+    <owl:Class rdf:about="http://inneo.linkeddata.es#Connector">
+        <rdfs:comment xml:lang="en">Connectors are timeless elements, used by the organizations of the ecosystem in a recurrent way to interrelate them in a voluntary basis, without being forced to do so.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://inneo.linkeddata.es#Event -->
+
+    <owl:Class rdf:about="http://inneo.linkeddata.es#Event">
+        <rdfs:comment xml:lang="en">Events are elements associated to specific moments in time, which provoke the interaction of organizations of the ecosystem around a specific connector or set of connectors.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://inneo.linkeddata.es#ExplicitKnowledge -->
+
+    <owl:Class rdf:about="http://inneo.linkeddata.es#ExplicitKnowledge">
+        <rdfs:subClassOf rdf:resource="http://inneo.linkeddata.es#Knowledge"/>
+        <rdfs:comment xml:lang="en">Explicit knowledge refers to that type of knowledge that has been or can be articulated, codified and stored in some kind of medium. (such as defined Nonaka and Takeuchi, 1995)</rdfs:comment>
+        <rdfs:label xml:lang="en">Explicit Knowledge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://inneo.linkeddata.es#Funding -->
+
+    <owl:Class rdf:about="http://inneo.linkeddata.es#Funding">
+        <rdfs:comment xml:lang="en">Funding is the act of providing financial resources, usually in the form of money, or other values such as effort or time, to finance a need, program, and project, usually by an organization or company (definition by Wikipedia)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://inneo.linkeddata.es#InnovationEcosystem -->
+
+    <owl:Class rdf:about="http://inneo.linkeddata.es#InnovationEcosystem">
+        <rdfs:comment xml:lang="en">A dynamic system made up by actors and connected by knowledge flows based on the relationships of these actors</rdfs:comment>
+        <rdfs:label xml:lang="en">Innovation Ecosystem</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://inneo.linkeddata.es#Knowledge -->
+
+    <owl:Class rdf:about="http://inneo.linkeddata.es#Knowledge">
+        <rdfs:comment xml:lang="en">In the context of innovation, knowledge is the &quot;element&quot; created, transferred and consumed by the organizations of the innovation ecosystem.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://inneo.linkeddata.es#Organization -->
+
+    <owl:Class rdf:about="http://inneo.linkeddata.es#Organization">
+        <rdfs:comment xml:lang="en">Organization represents a collection of people organized together into a community or other social, commercial or political structure, who share common goals</rdfs:comment>
+        <rdfs:label xml:lang="en">Organization</rdfs:label>
+        <skos:exactMatch rdf:resource="http://www.w3.org/ns/org#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inneo.linkeddata.es#Patent -->
+
+    <owl:Class rdf:about="http://inneo.linkeddata.es#Patent">
+        <rdfs:comment xml:lang="en">A patent is a form of intellectual property. A patent gives its owner (organization or person) the right to exclude others from making, using, selling, and importing an invention for a limited period of time, usually twenty years. (such as defined as Wikipedia)</rdfs:comment>
+        <rdfs:label xml:lang="en">Patent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://inneo.linkeddata.es#Project -->
+
+    <owl:Class rdf:about="http://inneo.linkeddata.es#Project">
+        <rdfs:comment xml:lang="en">Contemporary business and science treat as a project any undertaking, conducted individually or collaboratively and possibly involving research or design, that is carefully planned to achieve a particular aim. (definition by Wikipedia)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://inneo.linkeddata.es#TacitKnowledge -->
+
+    <owl:Class rdf:about="http://inneo.linkeddata.es#TacitKnowledge">
+        <rdfs:subClassOf rdf:resource="http://inneo.linkeddata.es#Knowledge"/>
+        <rdfs:comment xml:lang="en">Tacit knowledge is highly personal (held within the holder), subjective, difficult to formalize, articulate and communicate fully, experience based, contextualized, job specific, transferred through conversation or narrative, not captured by formal education or training and may even be subconscious but capable of becoming explicit knowledge. (such as defined by Nonaka and Takeuchi, 1995)</rdfs:comment>
+        <rdfs:label xml:lang="en">Tacit Knowledge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://inneo.linkeddata.es#Talent -->
+
+    <owl:Class rdf:about="http://inneo.linkeddata.es#Talent">
+        <rdfs:comment xml:lang="en">A talent is a group of aptitudes useful for some activities, which is normally represented or accumulated in one or more persons.</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
