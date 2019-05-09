@@ -60,14 +60,6 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :exploitsPatent rdf:type owl:ObjectProperty .
 
 
-###  http://inneo.linkeddata.es#grantsPatent
-:grantsPatent rdf:type owl:ObjectProperty ;
-              rdfs:domain :Organization ;
-              rdfs:range :Patent ;
-              rdfs:comment "NO HE ENTENDIDO LA NECESIDAD DE ESTO...Es para incluir la relación de una Oficina de Patentes y marcas con una patente concreta"@en ;
-              rdfs:label "grants patent"@en .
-
-
 ###  http://inneo.linkeddata.es#hasOrganization
 :hasOrganization rdf:type owl:ObjectProperty ;
                  rdfs:domain :InnovationEcosystem ;
